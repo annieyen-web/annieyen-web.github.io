@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>揭秘旅遊景點：過去、現在與科幻未來</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#a855f7',
+                        accent: '#f43f5e',
+                        dark: '#0f172a',
+                        glass: 'rgba(255, 255, 255, 0.03)',
+                        border: 'rgba(255, 255, 255, 0.1)',
+                    },
+                    fontFamily: {
+                        display: ['Outfit', 'Noto Sans TC', 'sans-serif'],
+                        body: ['Noto Sans TC', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                        'slide-up': 'slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(40px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #020617;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #818cf8 0%, #c084fc 50%, #fb7185 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .banner-container {
+            position: relative;
+            height: 80vh;
+            min-height: 500px;
+            overflow: hidden;
+        }
+        .banner-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.4) saturate(1.2);
+            transition: transform 10s ease;
+        }
+        .banner-container:hover .banner-image {
+            transform: scale(1.1);
+        }
+        .section-tag {
+            background: linear-gradient(90deg, #6366f1, #a855f7);
+            padding: 4px 16px;
+            border-radius: 99px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            display: inline-block;
+        }
+        .blog-content p {
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: #cbd5e1;
+            font-size: 1.125rem;
+        }
+        .sidebar-element {
+            position: sticky;
+            top: 2rem;
+        }
+        .content-highlight {
+            border-left: 4px solid #6366f1;
+            padding-left: 1.5rem;
+            font-style: italic;
+            background: rgba(99, 102, 241, 0.05);
+            margin: 2rem 0;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #020617;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #334155;
+        }
+    </style>
+</head>
+<body class="font-body">
+
+    <!-- Top Navigation Placeholder (Aesthetic Only) -->
+    <nav class="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center glass-card !rounded-none !border-t-0 !border-x-0 bg-opacity-80">
+        <div class="font-display font-extrabold text-2xl tracking-tighter">
+            <span class="text-white">M1142</span><span class="text-primary">1014</span>
+        </div>
+        <div class="hidden md:flex space-x-8 font-display text-sm font-medium tracking-widest text-slate-400">
+            <a href="#" class="hover:text-white transition-colors">CHRONICLE</a>
+            <a href="#" class="hover:text-white transition-colors">INSIGHTS</a>
+            <a href="#" class="hover:text-white transition-colors">FUTURE</a>
+        </div>
+        <button class="bg-primary hover:bg-secondary px-6 py-2 rounded-full text-sm font-bold transition-all transform hover:scale-105 active:scale-95">
+            JOIN NOW
+        </button>
+    </nav>
+
+    <!-- Hero Banner -->
+    <header class="banner-container flex items-center justify-center pt-20">
+        <div class="absolute inset-0 z-0">
+            <img src='https://opal.google/board/blobs/6de311b9-0c7c-49c5-83f9-37ce579801a4' alt='media_1' class="banner-image" />
+        </div>
+        <div class="relative z-10 text-center px-4 max-w-5xl animate-fade-in">
+            <div class="section-tag mb-6 animate-slide-up opacity-0" style="animation-delay: 0.2s;">TRAVEL INSIGHTS</div>
+            <h1 class="font-display font-black text-4xl md:text-7xl lg:text-8xl mb-6 leading-tight animate-slide-up opacity-0" style="animation-delay: 0.4s;">
+                【別再只是路過！】<br>
+                <span class="gradient-text">揭秘旅遊景點</span>
+            </h1>
+            <p class="text-lg md:text-2xl text-slate-300 max-w-2xl mx-auto font-light leading-relaxed animate-slide-up opacity-0" style="animation-delay: 0.6s;">
+                從朝聖之途到虛擬元宇宙，探索「目的地」背後的文化敘事與科幻未來。
+            </p>
+        </div>
+        <!-- Scroll Down Mouse -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce opacity-60">
+            <div class="w-6 h-10 border-2 border-white rounded-full flex justify-center p-1">
+                <div class="w-1 h-2 bg-white rounded-full"></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-24 grid grid-cols-1 lg:grid-cols-12 gap-16">
+        
+        <!-- Left Sidebar: Meta Info -->
+        <aside class="lg:col-span-3">
+            <div class="sidebar-element flex flex-col space-y-12">
+                <div class="glass-card p-8">
+                    <h4 class="font-display font-bold text-xs uppercase tracking-widest text-slate-500 mb-6">Article Info</h4>
+                    <div class="space-y-6">
+                        <div>
+                            <p class="text-xs text-slate-500 mb-1">AUTHOR</p>
+                            <p class="text-sm font-bold text-white uppercase tracking-tight">M11421014</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-500 mb-1">ESTIMATED READ</p>
+                            <p class="text-sm font-bold text-white">12 Minutes</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-500 mb-1">TOPICS</p>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="text-[10px] border border-slate-700 px-2 py-1 rounded">SOCIOLOGY</span>
+                                <span class="text-[10px] border border-slate-700 px-2 py-1 rounded">FUTURE TECH</span>
+                                <span class="text-[10px] border border-slate-700 px-2 py-1 rounded">TRAVEL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hidden lg:block">
+                    <div class="bg-gradient-to-br from-primary to-secondary p-8 rounded-3xl animate-float">
+                        <h3 class="font-display font-black text-2xl mb-4">Ready for the future?</h3>
+                        <p class="text-sm text-white/80 leading-relaxed mb-6">探索下一代數位旅遊的可能性，與我們一起重新定義「到達」。</p>
+                        <button class="w-full bg-white text-dark py-3 rounded-xl font-bold text-sm hover:bg-slate-100 transition-colors">LEARN MORE</button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <article class="lg:col-span-9 blog-content">
+            <section class="mb-16">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="h-px flex-1 bg-gradient-to-r from-transparent to-slate-800"></div>
+                    <span class="text-slate-500 font-display text-sm italic italic tracking-wider">The Introduction</span>
+                    <div class="h-px flex-1 bg-gradient-to-l from-transparent to-slate-800"></div>
+                </div>
+                
+                <p class="text-2xl font-light text-slate-100 leading-relaxed mb-8">
+                    想像一下這個畫面：你搭了十幾個小時的飛機，轉乘搖搖晃晃的巴士，頂著寒風排隊半小時，最後只為了跟一塊寫著「世界盡頭」的木牌拍張照。
+                </p>
+                <p>
+                    事後回想，那不過是一塊普通的木頭，但在那個當下，你卻心甘情願為它掏出大把鈔票與時間。為什麼？
+                </p>
+                
+                <div class="content-highlight my-12 py-8 bg-slate-900/50 rounded-r-2xl border-l-4 border-primary px-8">
+                    <p class="text-xl italic text-slate-200 mb-0">
+                        「一個真正意義上的『旅遊景點』，其實是『觀光客』、『景點本體』以及『標誌/資訊』三者碰撞出的化學反應。」
+                        <span class="block mt-4 text-sm font-bold text-primary">— Dean MacCannell</span>
+                    </p>
+                </div>
+
+                <p>
+                    如果沒有那塊標誌牌賦予的「世界盡頭」意義，那裡就只是一片無名的荒野。換句話說，景點不只是老建築或好風景，它更像是一場人類共同參與的文化敘事。今天，就讓我們戴上知識份子的濾鏡，扒開旅遊景點的華麗外衣，來一場從過去、現在到科幻未來的時空旅行。
+                </p>
+            </section>
+
+            <!-- Bento Box for History -->
+            <section class="mb-24">
+                <h2 class="font-display font-extrabold text-3xl md:text-5xl mb-12 flex items-center gap-4">
+                    <span class="text-primary tracking-tighter">01.</span> 歷史穿越劇
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="glass-card p-8 group hover:border-primary transition-all duration-500">
+                        <div class="text-accent mb-4">
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21l-8-4.5v-9L12 3l8 4.5v9L12 21z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 group-hover:text-primary transition-colors">古代：靈魂救贖的朝聖</h3>
+                        <p class="text-sm text-slate-400">古代人的旅行是一場為了靈魂救贖的「熱血朝聖團」，無論是耶路撒冷、麥加，還是聖地牙哥的朝聖之路，景點服務的是信仰與生存。</p>
+                    </div>
+                    
+                    <div class="glass-card p-8 group hover:border-secondary transition-all duration-500">
+                        <div class="text-secondary mb-4">
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 group-hover:text-secondary transition-colors">18 世紀：文青的「壯遊」</h3>
+                        <p class="text-sm text-slate-400">富家子弟的成年禮，前往羅馬、巴黎考察藝術。在那個年代，沒去過羅馬，你都不好意思在貴族晚宴上開口。</p>
+                    </div>
+
+                    <div class="glass-card p-8 md:col-span-2 group hover:border-white transition-all duration-500 bg-gradient-to-r from-slate-800 to-slate-900">
+                        <div class="flex flex-col md:flex-row gap-8 items-center">
+                            <div class="md:w-1/3">
+                                <h3 class="text-2xl font-black mb-2">工業革命與現代打卡</h3>
+                                <p class="text-primary font-bold">19世紀 - 至今</p>
+                            </div>
+                            <div class="md:w-2/3">
+                                <p class="text-slate-300 text-base">火車讓旅遊不再是貴族專利。湯瑪斯·庫克發明了「團體行程」，而迪士尼則證明景點可以「憑空創造」。現代人旅行，更多是為了「求讚問評論」。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contemporary Trends -->
+            <section class="mb-24 py-16 px-8 rounded-[40px] bg-gradient-to-b from-primary/10 to-transparent border border-white/5">
+                <h2 class="font-display font-extrabold text-3xl md:text-5xl mb-8">當紅炸子雞觀點</h2>
+                <p class="mb-12 text-slate-300">傳統的「趕鴨子團」早已過時。當代遊客追求的是深度與連接。</p>
+                
+                <div class="space-y-12">
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center font-bold text-xl">1</div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-2 text-white">CityWalk：深度城市漫遊</h4>
+                            <p class="text-slate-400">去傳統菜市場、學做當地菜。人們要的不再是打卡，而是「生活在別處」的真實感。</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0 w-12 h-12 bg-secondary rounded-full flex items-center justify-center font-bold text-xl">2</div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-2 text-white">IP 就是王道</h4>
+                            <p class="text-slate-400">哈利波特、吉卜力公園——強大的影視內容創造了極致的「入戲感」。</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0 w-12 h-12 bg-accent rounded-full flex items-center justify-center font-bold text-xl">3</div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-2 text-white">智慧旅遊 & 夜經濟</h4>
+                            <p class="text-slate-400">大數據、AR 導覽與不熄滅的燈光秀。科技與深夜餐酒館讓旅行無縫接軌。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- The Dark Side (Warning Style) -->
+            <section class="mb-24 border-2 border-accent/20 rounded-3xl overflow-hidden">
+                <div class="bg-accent/10 p-8 border-b border-accent/20">
+                    <h2 class="font-display font-extrabold text-3xl md:text-5xl text-accent flex items-center gap-4">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                        副作用大噴發
+                    </h2>
+                </div>
+                <div class="p-8 grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div>
+                        <h4 class="font-bold text-white text-lg mb-3">過度觀光 (Overtourism)</h4>
+                        <p class="text-sm text-slate-400 leading-relaxed">威尼斯與巴塞隆納的居民在抗議。短租平台推高房價，讓城市失去原本的靈魂與居民。</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-lg mb-3">文化商品化 (Staged Authenticity)</h4>
+                        <p class="text-sm text-slate-400 leading-relaxed">為了遊客而閹割包裝的祭典。我們看到的是真實傳承，還是廉價的「楚門的世界」？</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-lg mb-3">環境傷痕與同質化</h4>
+                        <p class="text-sm text-slate-400 leading-relaxed">消失的森林、塑膠垃圾，以及全球連鎖店帶來的「千篇一律」。</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-lg mb-3">漏損效應 (Leakage Effect)</h4>
+                        <p class="text-sm text-slate-400 leading-relaxed">利潤被國際集團抽走，當地人只能從事低薪勞動，美景變成了毫無溫度的背景。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Future Vision -->
+            <section class="mb-24 relative">
+                <div class="absolute -inset-4 bg-primary/20 blur-3xl -z-10 rounded-full opacity-50"></div>
+                <h2 class="font-display font-black text-3xl md:text-6xl mb-12 tracking-tighter">未來狂想曲 <span class="text-primary italic font-light">Sci-Fi Future</span></h2>
+                
+                <div class="space-y-16">
+                    <div class="flex flex-col md:flex-row gap-10 items-start">
+                        <div class="w-full md:w-1/2 glass-card p-8 border-l-8 border-primary">
+                            <h3 class="text-2xl font-bold mb-4">數位孿生 & 虛實融合</h3>
+                            <p class="text-slate-300">戴上眼鏡，站在消失的圓明園或古羅馬競技場。實體與數位的邊界將徹底消融。</p>
+                        </div>
+                        <div class="w-full md:w-1/2 glass-card p-8 border-l-8 border-secondary">
+                            <h3 class="text-2xl font-bold mb-4">再生旅遊 (Regenerative)</h3>
+                            <p class="text-slate-300">不再只是「不留痕跡」，而是「正向修復」。去旅行的同時順手復育珊瑚、種一棵樹。</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-10 bg-gradient-to-br from-slate-900 via-slate-900 to-indigo-900/30">
+                        <div class="max-w-2xl">
+                            <h3 class="text-3xl font-black mb-6 text-white">超個性化 AI 導覽</h3>
+                            <p class="text-lg text-slate-300 leading-relaxed mb-8">
+                                你的智慧手環偵測到你沒睡好，AI 會自動幫你把耗體力的爬山行程換成隱秘的溫泉下午茶。旅遊將走向去中心化，湧向那些「地圖上找不到」的微型景點。
+                            </p>
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center animate-pulse">
+                                    <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                </div>
+                                <div class="text-xs text-slate-500 font-mono flex items-center italic">SYSTEM ONLINE: MONITORING BIOMETRICS...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Conclusion -->
+            <section class="pt-24 border-t border-slate-800">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h2 class="font-display font-bold text-4xl mb-8">下一次旅行，你想留下什麼？</h2>
+                    <p class="text-xl text-slate-400 mb-12 leading-relaxed italic">
+                        「旅遊景點的本質從來都不只是一個地理座標，它是人類探索世界、投射渴望與豐富心靈的載體。它記錄了我們的文明，也考驗著我們的智慧。」
+                    </p>
+                    <div class="inline-block p-[2px] rounded-full bg-gradient-to-r from-primary via-secondary to-accent">
+                        <button class="bg-dark px-12 py-4 rounded-full font-bold text-lg hover:bg-transparent transition-all group">
+                            重新出發 <span class="inline-block transition-transform group-hover:translate-x-2">→</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+        </article>
+    </main>
+
+    <!-- Simple Interactivity for the scroll -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-slide-up');
+                        entry.target.style.opacity = "1";
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('section').forEach(section => {
+                section.style.opacity = "0";
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
